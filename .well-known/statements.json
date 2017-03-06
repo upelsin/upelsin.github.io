@@ -1,5 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "com.upwork.android",
-               "sha256_cert_fingerprints": ["4C:06:B4:39:D6:A2:30:9D:6E:7C:14:5D:7B:6C:A6:93:E2:77:70:0E:D1:6C:7C:7E:89:60:5A:EB:B8:6D:C6:8B"] }
-}]
