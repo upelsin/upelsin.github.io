@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Android Don’ts: please abandon findViewById() and its pals as it breaches encapsulation | Your awesome title</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Android Don’ts: please abandon findViewById() and its pals as it breaches encapsulation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="TL;DR Manipulating widgets directly is a bad habit as it breaches encapsulation and creates a tight coupling between presentation code and view layout declaration. Consider using the ViewModel pattern instead, backed by the Android Data Binding library." />
+<meta property="og:description" content="TL;DR Manipulating widgets directly is a bad habit as it breaches encapsulation and creates a tight coupling between presentation code and view layout declaration. Consider using the ViewModel pattern instead, backed by the Android Data Binding library." />
+<link rel="canonical" href="/android/architecture/2018/05/04/and-donts-find-view-by-id.html" />
+<meta property="og:url" content="/android/architecture/2018/05/04/and-donts-find-view-by-id.html" />
+<meta property="og:site_name" content="Your awesome title" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-04T21:20:36+03:00" />
+<script type="application/ld+json">
+{"description":"TL;DR Manipulating widgets directly is a bad habit as it breaches encapsulation and creates a tight coupling between presentation code and view layout declaration. Consider using the ViewModel pattern instead, backed by the Android Data Binding library.","@type":"BlogPosting","url":"/android/architecture/2018/05/04/and-donts-find-view-by-id.html","headline":"Android Don’ts: please abandon findViewById() and its pals as it breaches encapsulation","dateModified":"2018-05-04T21:20:36+03:00","datePublished":"2018-05-04T21:20:36+03:00","mainEntityOfPage":{"@type":"WebPage","@id":"/android/architecture/2018/05/04/and-donts-find-view-by-id.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Your awesome title" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Android Don’ts: please abandon findViewById() and its pals as it breaches encapsulation</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-05-04T21:20:36+03:00" itemprop="datePublished">May 4, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote>
+  <p>TL;DR Manipulating widgets directly is a bad habit as it breaches encapsulation and creates a tight coupling between presentation code and view layout declaration. Consider using the ViewModel pattern instead, backed by the Android Data Binding library.</p>
+</blockquote>
+
+<p><em>This article opens a series in which we’ll be deriving an efficient set of patterns related to view layout and presentation code. Armed with good parts of MVx patterns, Clean Architecture, Separation Of Concerns, Reactive Programming, we’ll shape them up to be suitable for day-to-day screen development routine, regardless of size of application. We’ll be staying lean, but be doing the right thing, not just the quickest thing possible.</em></p>
+
+<p>It seems many developers keep using <code class="highlighter-rouge">findViewById()</code> (or its variations), despite popularity of the ViewModel pattern and maturity of the <a href="https://developer.android.com/topic/libraries/data-binding/">Android Data Binding library</a>.</p>
+
+<p>My guess it’s because <code class="highlighter-rouge">findViewById()</code> is an easy thing to get in touch with: it spreads across the official documentation and open source repos. Also, articles highlighting trendy Kotlin features give it a shot as well, for example:</p>
+
+<pre><code class="language-Kotlin">val nameTextView by lazy { view!!.findViewById&lt;TextView&gt;(R.id.nameTextView) }
+</code></pre>
+<p>or</p>
+
+<pre><code class="language-Kotlin">val details: TextView? by bindOptionalView(R.id.details)
+</code></pre>
+<p>Even the official library, <a href="https://kotlinlang.org/docs/tutorials/android-plugin.html">Kotlin Android Extensions</a>, took effort implementing code generation: widgets become available in Activity’s scope without direct calls to <code class="highlighter-rouge">findViewById()</code>.</p>
+
+<p>Even though nice language features and well-made libraries do make life easier, there are problems in the foundation of <code class="highlighter-rouge">findViewById()</code> itself.</p>
+
+<h2 id="problems">Problems</h2>
+
+<h4 id="tight-coupling-between-view-layout-and-presentation-code">Tight coupling between view layout and presentation code</h4>
+
+<p>Examples:</p>
+<ul>
+  <li>Creating widget IDs in view layout and referencing them in presentation code – coupling by IDs.</li>
+  <li>
+    <p>Specifying widget types when declaring variables in presentation code.</p>
+
+    <ul>
+      <li>Say you’ve changed widget type from <code class="highlighter-rouge">CheckBox</code> to <code class="highlighter-rouge">ToggleButton</code> or replaced <code class="highlighter-rouge">RelativeLayout</code> with <code class="highlighter-rouge">CoordinatorLayout</code>, now presentation code should be updated as well.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Presentation code knows view layout structure and how widgets are nested within container.</p>
+
+    <ul>
+      <li>Say you’ve wrapped a widget with a container and now want to control visibility by that container – presentation code should not call <code class="highlighter-rouge">setVisibility()</code> on the widget anymore.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Widgets’ look and feel is manipulated by presentation code, although most of the time it’s possible to set those in XML.</p>
+  </li>
+  <li>
+    <p>Sometimes view layout might hold reference back to presentation code, thus making two-way coupling.</p>
+  </li>
+  <li>…list goes on.</li>
+</ul>
+
+<p>On top of that, there is coupling between two different types of code: view layout is <em>declarative</em> (it says <em>what</em> widgets should be in layout and doesn’t say <em>how</em> that should be achieved), and presentation code is <em>imperative</em> (it says <em>how</em> widgets should be manipulated, step-by-step; and <em>what</em> is not very clear, through those steps).</p>
+
+<h4 id="breach-of-view-layout-encapsulation">Breach of view layout encapsulation</h4>
+
+<p>A continuation of the previous one.</p>
+
+<p>Widget IDs, widget types, styles applied, structure of nesting, widget attribute and method names – these are implementation details of view layout.</p>
+
+<p><code class="highlighter-rouge">findViewById()</code> is nothing more but a way to break into view layout, get knowledge about its internal structure and start manipulating it based on that knowledge.</p>
+
+<p><em>This is breach of <a href="https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)">encapsulation</a>, one of the core principles in OOP.</em></p>
+
+<p>Instead, we should allow view layout to do its job, treating it as an obscure entity with its own responsibility, guaranteeing no micro-management from presentation code.</p>
+
+<h4 id="staying-imperative-instead-of-following-reactive-programming">Staying imperative instead of following Reactive Programming</h4>
+
+<p>Telling widget to set text, change color, change layout parameters, assigning click listener is imperative.</p>
+
+<p>Cases when view layout manipulates presentation code by directly calling its methods in it, are imperative, too.</p>
+
+<p>By Reactive Programming, we should rely on streams of data instead. Interested parties (presentation code, view layout) can subscribe to relevant sources and <em>react</em> to data in those streams according to their responsibilities.</p>
+
+<h4 id="coupling-to-the-android-framework">Coupling to the Android framework</h4>
+
+<p>Since presentation code knows about <code class="highlighter-rouge">findViewById()</code>, widget types, widget method names, …, it stays coupled to the Android framework, because these features belong to it.</p>
+
+<p>But to quote a statement from <a href="https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a>:</p>
+
+<blockquote>
+  <p>Independent of Frameworks. The architecture does not depend on the existence of some library of feature laden software. This allows you to use such frameworks as tools, rather than having to cram your system into their limited constraints.</p>
+</blockquote>
+
+<p>Also, the “Independent of Frameworks” thing is important because we’d want more code to be reused for different platforms: iOS, mobile Web (this would be the topic for other series of articles, but to give a clue, Kotlin/Native is heading in that direction).</p>
+
+<h2 id="solution">Solution</h2>
+
+<p><em>(I’ve stripped off comparison of solutions because I’d like to shift focus to importance of Clean Architecture and Separation Of Concerns. This solution does conform to both, being its main virtue. If you feel other approaches might have been considered, let’s discuss that in comments.)</em></p>
+
+<p>What is something simple which separates presentation code from implementation detail of view layout? What is something view-like (meaning it has data to be displayed on screen) but generic enough not to bind presentation code to widget types, etc.? Sounds like the ViewModel pattern.</p>
+
+<p><em>(We will take a closer look at ViewModel and its relations in a separate article, only an introduction is given here.)</em></p>
+
+<p>This is an example how view layout would look like, without widget IDs, but with a ViewModel attached (please make sure you are familiar with the <a href="https://developer.android.com/topic/libraries/data-binding/">Android Data Binding library</a>):</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;layout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+        <span class="na">xmlns:bind=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;data&gt;</span>
+        <span class="nt">&lt;variable</span>
+            <span class="na">name=</span><span class="s">"viewModel"</span>
+            <span class="na">type=</span><span class="s">"com.example.VenueViewModel"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+
+    <span class="nt">&lt;LinearLayout</span>
+        <span class="err">...</span>
+        <span class="na">bind:onClick=</span><span class="s">"@{viewModel.onClicked}"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;ImageView</span>
+            <span class="err">...</span>
+            <span class="na">bind:src=</span><span class="s">"@{viewModel.image}"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;TextView</span>
+            <span class="err">...</span>
+            <span class="na">android:text=</span><span class="s">"@{viewModel.name}"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;TextView</span>
+            <span class="err">...</span>
+            <span class="na">android:text=</span><span class="s">"@{viewModel.location}"</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;/LinearLayout&gt;</span>
+
+<span class="nt">&lt;/layout&gt;</span>
+</code></pre></div></div>
+
+<p>Suppose, we decided to update this layout to:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;layout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+        <span class="na">xmlns:bind=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;data&gt;</span>
+        <span class="nt">&lt;variable</span>
+            <span class="na">name=</span><span class="s">"viewModel"</span>
+            <span class="na">type=</span><span class="s">"com.example.VenueViewModel"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+
+    <span class="nt">&lt;TextView</span>
+        <span class="err">...</span>
+        <span class="na">android:text=</span><span class="s">'@{viewModel.name + ", " + viewModel.location}'</span>
+        <span class="na">bind:drawableStart=</span><span class="s">"@{viewModel.image}"</span>
+        <span class="na">bind:onClick=</span><span class="s">"@{viewModel.onClicked}"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/layout&gt;</span>
+</code></pre></div></div>
+
+<p>The change was done with ease, without touching presentation code at all and even without recompilation. And the latter might not look like a big deal, but in a project with many dozens of screens it does save <em>a lot</em> of time.</p>
+
+<p>Then, contents of the corresponding ViewModel:</p>
+<pre><code class="language-Kotlin">class VenueViewModel {
+    val image = ObservableField&lt;String&gt;()
+    val name = ObservableField&lt;String&gt;()
+    val location = ObservableField&lt;String&gt;()
+
+    val onClicked = PublishSubject.create&lt;View&gt;()
+}
+</code></pre>
+<p>Now your presentation code is completely decoupled from view layout:</p>
+<pre><code class="language-Kotlin">//to propagate changes to view
+viewModel.location.set(lastSeen)
+...
+//to react to user input
+viewModel.onClicked.subscribe { navigateElsewhere() }
+</code></pre>
+
+<p><em>Both ViewModel and presentation code is simplified, many details are omitted – this will be covered in upcoming articles.</em></p>
+
+<h2 id="benefits-of-the-solution">Benefits of the solution</h2>
+
+<h4 id="view-related-code-is-not-scattered">View-related code is not scattered</h4>
+
+<p>How many times did you find yourself doing part of view styling and layout in XML and other part – in Kotlin (Java) code? As screen becomes more complex, it might take significant time to find where a particular style is applied: you need to go through XML and several source code files.</p>
+
+<p>The ViewModel pattern forces you to shift view-related code to view, since presentation code no longer has a direct reference to view layout.</p>
+
+<p>As a positive side effect of this we have clear separation between two types of code: view layout is <em>declarative</em>, presentation code is <em>imperative</em>.</p>
+
+<h4 id="developers-can-work-in-parallel-without-interfering-each-other">Developers can work in parallel without interfering each other</h4>
+
+<p>One developer can be updating look and feel of a screen, whereas another one can be fixing a bug in presentation code for that same screen, at the same time.</p>
+
+<p>When both of them submit their pull requests, there will be no conflicts between them. Also, these developers won’t spend time waiting on each other or asking each other which lines are safe to change.</p>
+
+<p>And all experienced teams know how much time can be saved avoiding that extra coordination.</p>
+
+<h4 id="testing-becomes-much-easier">Testing becomes much easier</h4>
+
+<p>Testing on Android is still hard, also because launching instrumentation tests against UI is very slow. This seems to be a primary reason why many teams give up TDD or even doing testing at all.</p>
+
+<p>With the current solution, you can be testing against ViewModel instead. That would allow to run tests much faster (since no emulator is involved), thus enabling TDD.</p>
+
+<p><em>Also, I’m not saying there should be no tests against UI. I will write about balance between tests against UI and against ViewModel in a separate article.</em></p>
+
+<h4 id="conforms-to-reactive-programming">Conforms to Reactive Programming</h4>
+
+<p>To quote the definition:</p>
+
+<blockquote>
+  <p>In computing, reactive programming is a declarative programming paradigm concerned with data streams and the propagation of change.</p>
+</blockquote>
+
+<p>In the ViewModel code shown above each field is a data stream consumed either by view layout (listening, for example, for location change) or by presentation code (listening for button clicks).</p>
+
+<p>Thus, encapsulation of view layout is intact as view layout takes its own responsibility to wire up to streams of data and update itself accordingly.</p>
+
+<h4 id="conforms-to-clean-architecture">Conforms to Clean Architecture</h4>
+
+<p>For example, <a href="https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html">Clean Architecture</a> says presentation code (sitting at the “Interface Adapters” circle) and view layout code (at “External Interfaces”) belong to different layers. And according to the Dependency rule, dependencies can only point inwards, meaning that presentation code <em>must not</em> depend on view layout, because “Interface Adapters” can’t depend on “External Interfaces”.</p>
+
+<p>This statement does not hold when using <code class="highlighter-rouge">findViewById()</code>, and the ViewModel pattern fixes that.</p>
+
+<p>Also, the current solution conforms to other important rules: “Independent of Frameworks”, “Testable”, “Independent of UI”.</p>
+
+<h4 id="step-towards-reusing-code-across-different-platforms">Step towards reusing code across different platforms</h4>
+
+<p>To quote Clean Architecture:</p>
+
+<blockquote>
+  <p>Independent of UI. The UI can change easily, without changing the rest of the system. A Web UI could be replaced with a console UI, for example, without changing the business rules.</p>
+</blockquote>
+
+<p>We want to be independent of UI not because we want to make a random extra effort.</p>
+
+<p>Instead, we want to leverage reusability because UI-independent and platform-independent code can be shared (Kotlin/Native has already been heading in that direction). I’ll be writing about this topic in upcoming articles.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>We highlighted problems brought by usage of <code class="highlighter-rouge">findViewById()</code> and found a solution to mitigate those. We also saw how scalable the solution is and how it conforms to Clean Architecture and Separation Of Concerns.</p>
+
+  </div><a class="u-url" href="/android/architecture/2018/05/04/and-donts-find-view-by-id.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

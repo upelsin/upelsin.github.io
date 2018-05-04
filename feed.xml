@@ -1,191 +1,228 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-04-20T12:35:33+03:00</updated><id>/</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/2018/04/19/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-04-19T14:20:36+03:00</published><updated>2018-04-19T14:20:36+03:00</updated><id>/jekyll/update/2018/04/19/welcome-to-jekyll</id><content type="html" xml:base="/jekyll/update/2018/04/19/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
-
-&lt;script id=&quot;dsq-count-scr&quot; src=&quot;//alexeydmitriev.disqus.com/count.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;
-
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://alexeydmitriev.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-&lt;/script&gt;
-
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/2018/04/19/android-stop.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-04-19T14:20:36+03:00</published><updated>2018-04-19T14:20:36+03:00</updated><id>/jekyll/update/2018/04/19/android-stop</id><content type="html" xml:base="/jekyll/update/2018/04/19/android-stop.html">&lt;h1 id=&quot;android-please-finally-disrank-and-abandon-findviewbyid-and-friends&quot;&gt;Android: please finally disrank and abandon &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt; and friends&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;TL;DR Data binding and view model patterns are all in favor instead.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2018-05-04T21:26:46+03:00</updated><id>/</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Android Don’ts: please abandon findViewById() and its pals as it breaches encapsulation</title><link href="/android/architecture/2018/05/04/and-donts-find-view-by-id.html" rel="alternate" type="text/html" title="Android Don’ts: please abandon findViewById() and its pals as it breaches encapsulation" /><published>2018-05-04T21:20:36+03:00</published><updated>2018-05-04T21:20:36+03:00</updated><id>/android/architecture/2018/05/04/and-donts-find-view-by-id</id><content type="html" xml:base="/android/architecture/2018/05/04/and-donts-find-view-by-id.html">&lt;blockquote&gt;
+  &lt;p&gt;TL;DR Manipulating widgets directly is a bad habit as it breaches encapsulation and creates a tight coupling between presentation code and view layout declaration. Consider using the ViewModel pattern instead, backed by the Android Data Binding library.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;It looks like even though Android’s data binding has been around for quite a lot of time, and the community has been quite hands-on with MVP / MVVM families of patters, people still tend to use &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt; – it is creeping through good libraries and articles.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This article opens a series in which we’ll be deriving an efficient set of patterns related to view layout and presentation code. Armed with good parts of MVx patterns, Clean Architecture, Separation Of Concerns, Reactive Programming, we’ll shape them up to be suitable for day-to-day screen development routine, regardless of size of application. We’ll be staying lean, but be doing the right thing, not just the quickest thing possible.&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;And (funny), when Kotlin became wide-spread, there appeared articles which suggested dealing with &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt; in Kotlin way, for example:&lt;/p&gt;
+&lt;p&gt;It seems many developers keep using &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt; (or its variations), despite popularity of the ViewModel pattern and maturity of the &lt;a href=&quot;https://developer.android.com/topic/libraries/data-binding/&quot;&gt;Android Data Binding library&lt;/a&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;val nameTextView by lazy { view!!.findViewById&amp;lt;TextView&amp;gt;(R.id.nameTextView) }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;My guess it’s because &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt; is an easy thing to get in touch with: it spreads across the official documentation and open source repos. Also, articles highlighting trendy Kotlin features give it a shot as well, for example:&lt;/p&gt;
 
-&lt;p&gt;or by using delegates&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Kotlin&quot;&gt;val nameTextView by lazy { view!!.findViewById&amp;lt;TextView&amp;gt;(R.id.nameTextView) }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;or&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;val stateTextView: TextView by findView(this, R.id.stateTextView)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Kotlin&quot;&gt;val details: TextView? by bindOptionalView(R.id.details)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Even the official library, &lt;a href=&quot;https://kotlinlang.org/docs/tutorials/android-plugin.html&quot;&gt;Kotlin Android Extensions&lt;/a&gt;, took effort implementing code generation: widgets become available in Activity’s scope without direct calls to &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;There is Also&lt;/p&gt;
+&lt;p&gt;Even though nice language features and well-made libraries do make life easier, there are problems in the foundation of &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt; itself.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;val details: TextView? by bindOptionalView(R.id.details)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;problems&quot;&gt;Problems&lt;/h2&gt;
 
-&lt;p&gt;from KotterKnife&lt;/p&gt;
+&lt;h4 id=&quot;tight-coupling-between-view-layout-and-presentation-code&quot;&gt;Tight coupling between view layout and presentation code&lt;/h4&gt;
 
-&lt;p&gt;Even Kotlin Android Extensions, being a good library, take not an ideal direction:https://kotlinlang.org/docs/tutorials/android-plugin.html
-Generate code (which takes time).&lt;/p&gt;
-
-&lt;p&gt;Anko: https://www.kotlindevelopment.com/why-anko-layouts-dsl-better-xml/
-Not an option, mixing code and layout&lt;/p&gt;
-
-&lt;p&gt;I’ll explain why it’s not an optimal way, and how to become more efficient.&lt;/p&gt;
-
-&lt;p&gt;Disadvantages:&lt;/p&gt;
-
-&lt;h3 id=&quot;1-too-much-typing&quot;&gt;1. Too much typing&lt;/h3&gt;
-
-&lt;p&gt;You need to type IDs two times, in view and in presenter.&lt;/p&gt;
-
-&lt;h3 id=&quot;2-coupling-between-view-and-code&quot;&gt;2. Coupling between view and code&lt;/h3&gt;
-
-&lt;p&gt;Field implementaion might change: toggle button to checkbox.&lt;/p&gt;
-
-&lt;p&gt;Say you replaced &lt;code class=&quot;highlighter-rouge&quot;&gt;RelativeLayout&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;CoordinatorLayout&lt;/code&gt;, now you need to make corresponding changes in code as well.&lt;/p&gt;
-
-&lt;p&gt;Say you changed color for checkmark.&lt;/p&gt;
-
-&lt;p&gt;Say you put a field in a container and want to control visibility by container, and not by field.&lt;/p&gt;
-
-&lt;h3 id=&quot;wastes-build-cycles-when-view-id-changes-in-view-layout&quot;&gt;Wastes build cycles when view ID changes in view layout&lt;/h3&gt;
-
-&lt;p&gt;View IDs in view layout must match those in code. How many times did you find yourself coming up with a better name for a view ID (and maybe also renaming some others, to keep naming consistent) and then rebuilding the app so that new IDs show up in code? And even in mid-size app that would be a lengthy cycle.&lt;/p&gt;
-
-&lt;p&gt;Say you’re a smart one and just type new ID w/o rebuilding, but how many minutes can you keep up w/o IntelliSense if writing code blindly?&lt;/p&gt;
-
-&lt;h3 id=&quot;3-wasting-build-time-to-generate-rjava&quot;&gt;3. Wasting build time to generate &lt;code class=&quot;highlighter-rouge&quot;&gt;R.java&lt;/code&gt;?&lt;/h3&gt;
-
-&lt;p&gt;That might sound… but data binding proc can take more time.&lt;/p&gt;
-
-&lt;h3 id=&quot;abuse-of-reactive-approach&quot;&gt;Abuse of reactive approach&lt;/h3&gt;
-
-&lt;p&gt;Reactive UI is almost a de-facto standard (will skip explanation, there are many good articles proving that), and &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt; gets in the way of that:
-with Reactive, we should say: ok, view, here are some streams (&lt;code class=&quot;highlighter-rouge&quot;&gt;Subject&lt;/code&gt;s), publish to those when user interaction happens. On the other side, you gotta listen to some of &lt;code class=&quot;highlighter-rouge&quot;&gt;Observable&lt;/code&gt;s and update yourself when we push new data to those.&lt;/p&gt;
-
-&lt;p&gt;But with &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt;, instead of trusting view with its responsibility (style itself, react on data changes, propagate user input), we reach out to it and then shake and harass it by getting through its internals: e.g., calling &lt;code class=&quot;highlighter-rouge&quot;&gt;setText()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;setOnClickListener()&lt;/code&gt;, and (God save you) &lt;code class=&quot;highlighter-rouge&quot;&gt;setLayoutDimensionsTralala()&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;breach-of-encapsulation--exposes-view-implementation&quot;&gt;Breach of encapsulation / Exposes view implementation&lt;/h3&gt;
-
-&lt;p&gt;That relates to the previous point: instead of allowing view to do its job on its own, we make our app aware of view’s internal specifics.&lt;/p&gt;
-
-&lt;p&gt;Why should we know how to set view’s style, margins, paddings, etc.?
-Why should we know even how to set view’s text?
-Why should we know structure and naming of view event handlers?&lt;/p&gt;
-
-&lt;p&gt;Again, we should flip that and let the view be plugged in (as opposed to be controlled).&lt;/p&gt;
-
-&lt;h3 id=&quot;coupling-with-android-framework&quot;&gt;Coupling with Android framework&lt;/h3&gt;
-
-&lt;p&gt;Any framework is an implementation detail (refer to Clean Architecture), so whenever we developers can, we should stay decoupled from it.&lt;/p&gt;
-
-&lt;p&gt;Remember: framework is an entity outside boundaries of application logic.&lt;/p&gt;
-
-&lt;p&gt;Also, in theory, we should be able to swap one framework with another.
-Say I want a mobile web application: screen layout is almost the same, presentation logic is the same. Why can’t I port my code and compile it for web target? (Especially given that Kotlin compiles to JavaScript!)&lt;/p&gt;
-
-&lt;h3 id=&quot;easier-testing&quot;&gt;Easier testing&lt;/h3&gt;
-
-&lt;p&gt;instrumentation tests (on devices / emulators) are freaking slow. Even though you use Robolectic to test on JVM, it requires a lot of ceremony to spin up activities and views.&lt;/p&gt;
-
-&lt;p&gt;When using ViewModel, you can test against it, not against views.
-That shortens your TDD cycle a lot (you should do TDD; slow build and test times is also probably the main reason why TDD or just testing is abandoned for Android).&lt;/p&gt;
-
-&lt;p&gt;Testing against ViewModel as opposed to real views on screen (using Espresso, for example) are not mutually exclusive, you can still have your Espresso tests (and probably, you should), but key takeaway here is that you can have less (even much less) UI tests, because unit tests (those which test against ViewModel) would cover most of the cases.&lt;/p&gt;
-
-&lt;p&gt;Of course, there is always chance that somebody on team would not wire ViewModel to view 100% correct, but you can cover that with much fewer exploratory tests.&lt;/p&gt;
-
-&lt;p&gt;Maintaining and running UI tests is another (long and sometimes painful) story for a separate blog post.&lt;/p&gt;
-
-&lt;p&gt;So presenter dev cycle could look like:&lt;/p&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;create a test (Spek) file for presenter&lt;/li&gt;
-  &lt;li&gt;write a non-compiling test so its assertion verifies against ViewModel&lt;/li&gt;
-  &lt;li&gt;create ViewModel class, add corresponding Field&lt;/li&gt;
-  &lt;li&gt;implement functionality in presenter so that test passes&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Thus:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;you would be growing contract between view and presenter, step-by-step&lt;/li&gt;
+  &lt;li&gt;Creating widget IDs in view layout and referencing them in presentation code – coupling by IDs.&lt;/li&gt;
   &lt;li&gt;
-    &lt;h2 id=&quot;your-design-will-be-driven-by-tdd-which-mean-it-would-be-sufficient-and-clear&quot;&gt;your design will be driven by TDD, which mean it would be sufficient and clear&lt;/h2&gt;
+    &lt;p&gt;Specifying widget types when declaring variables in presentation code.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Say you’ve changed widget type from &lt;code class=&quot;highlighter-rouge&quot;&gt;CheckBox&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;ToggleButton&lt;/code&gt; or replaced &lt;code class=&quot;highlighter-rouge&quot;&gt;RelativeLayout&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;CoordinatorLayout&lt;/code&gt;, now presentation code should be updated as well.&lt;/li&gt;
+    &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Presentation code knows view layout structure and how widgets are nested within container.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Say you’ve wrapped a widget with a container and now want to control visibility by that container – presentation code should not call &lt;code class=&quot;highlighter-rouge&quot;&gt;setVisibility()&lt;/code&gt; on the widget anymore.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Widgets’ look and feel is manipulated by presentation code, although most of the time it’s possible to set those in XML.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Sometimes view layout might hold reference back to presentation code, thus making two-way coupling.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;…list goes on.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Recap:&lt;/p&gt;
+&lt;p&gt;On top of that, there is coupling between two different types of code: view layout is &lt;em&gt;declarative&lt;/em&gt; (it says &lt;em&gt;what&lt;/em&gt; widgets should be in layout and doesn’t say &lt;em&gt;how&lt;/em&gt; that should be achieved), and presentation code is &lt;em&gt;imperative&lt;/em&gt; (it says &lt;em&gt;how&lt;/em&gt; widgets should be manipulated, step-by-step; and &lt;em&gt;what&lt;/em&gt; is not very clear, through those steps).&lt;/p&gt;
 
-&lt;h5 id=&quot;we-use-view-viewmodel-to-establish-clear-contract-between-view-and-presenters&quot;&gt;We use view ViewModel to establish clear contract between View and presenters&lt;/h5&gt;
+&lt;h4 id=&quot;breach-of-view-layout-encapsulation&quot;&gt;Breach of view layout encapsulation&lt;/h4&gt;
 
-&lt;h5 id=&quot;there-is-a-boundary-between-presenter-and-view-and-viewmodel-instance-is-an-embodiement-of-contract-transferred-across-it&quot;&gt;There is a boundary between Presenter and View, and ViewModel instance is an embodiement of contract transferred across it&lt;/h5&gt;
+&lt;p&gt;A continuation of the previous one.&lt;/p&gt;
 
-&lt;h5 id=&quot;we-can-change-view-implementation-and-ultimately-even-reuse-viewmodel-and-presenter-for-different-platforms-since-kotlin-is-heading-that-way&quot;&gt;We can change view implementation and (ultimately) even reuse ViewModel and Presenter for different platforms (since Kotlin is heading that way)&lt;/h5&gt;
+&lt;p&gt;Widget IDs, widget types, styles applied, structure of nesting, widget attribute and method names – these are implementation details of view layout.&lt;/p&gt;
 
-&lt;h5 id=&quot;view-layout-is-decoupled-from-which-and-how-data-is-shown-on-screen&quot;&gt;View layout is decoupled from which and how data is shown on screen&lt;/h5&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt; is nothing more but a way to break into view layout, get knowledge about its internal structure and start manipulating it based on that knowledge.&lt;/p&gt;
 
-&lt;h5 id=&quot;tests-do-not-require-android-instrumentation--fast&quot;&gt;Tests do not require Android instrumentation = fast&lt;/h5&gt;
+&lt;p&gt;&lt;em&gt;This is breach of &lt;a href=&quot;https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)&quot;&gt;encapsulation&lt;/a&gt;, one of the core principles in OOP.&lt;/em&gt;&lt;/p&gt;
 
-&lt;h5 id=&quot;dependency-inversion-principle-is-kept-view-is-dependent-on-view-model-so-that-dependency-points-inwards-compare-presenter-depends-on-view-type-dependency-points-outwards&quot;&gt;Dependency inversion principle is kept: view is dependent on view model, so that dependency points inwards; compare: presenter depends on view type, dependency points outwards&lt;/h5&gt;
+&lt;p&gt;Instead, we should allow view layout to do its job, treating it as an obscure entity with its own responsibility, guaranteeing no micro-management from presentation code.&lt;/p&gt;
 
-&lt;h5 id=&quot;view-implementaion-changes&quot;&gt;View implementaion changes&lt;/h5&gt;
+&lt;h4 id=&quot;staying-imperative-instead-of-following-reactive-programming&quot;&gt;Staying imperative instead of following Reactive Programming&lt;/h4&gt;
 
-&lt;h5 id=&quot;decoupling-from-android-framework-shortens-your-tdd-cycle-since-during-those-cycles-android-framework-is-not-compiled&quot;&gt;Decoupling from Android framework shortens your TDD cycle since during those cycles Android framework is not compiled&lt;/h5&gt;
+&lt;p&gt;Telling widget to set text, change color, change layout parameters, assigning click listener is imperative.&lt;/p&gt;
 
-&lt;script id=&quot;dsq-count-scr&quot; src=&quot;//alexeydmitriev.disqus.com/count.js&quot; async=&quot;&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Cases when view layout manipulates presentation code by directly calling its methods in it, are imperative, too.&lt;/p&gt;
 
-&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
+&lt;p&gt;By Reactive Programming, we should rely on streams of data instead. Interested parties (presentation code, view layout) can subscribe to relevant sources and &lt;em&gt;react&lt;/em&gt; to data in those streams according to their responsibilities.&lt;/p&gt;
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://alexeydmitriev.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-&lt;/script&gt;
+&lt;h4 id=&quot;coupling-to-the-android-framework&quot;&gt;Coupling to the Android framework&lt;/h4&gt;
 
-&lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;https://disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</content><author><name></name></author><summary type="html">Android: please finally disrank and abandon findViewById() and friends</summary></entry></feed>
+&lt;p&gt;Since presentation code knows about &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt;, widget types, widget method names, …, it stays coupled to the Android framework, because these features belong to it.&lt;/p&gt;
+
+&lt;p&gt;But to quote a statement from &lt;a href=&quot;https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html&quot;&gt;Clean Architecture&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Independent of Frameworks. The architecture does not depend on the existence of some library of feature laden software. This allows you to use such frameworks as tools, rather than having to cram your system into their limited constraints.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Also, the “Independent of Frameworks” thing is important because we’d want more code to be reused for different platforms: iOS, mobile Web (this would be the topic for other series of articles, but to give a clue, Kotlin/Native is heading in that direction).&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;(I’ve stripped off comparison of solutions because I’d like to shift focus to importance of Clean Architecture and Separation Of Concerns. This solution does conform to both, being its main virtue. If you feel other approaches might have been considered, let’s discuss that in comments.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;What is something simple which separates presentation code from implementation detail of view layout? What is something view-like (meaning it has data to be displayed on screen) but generic enough not to bind presentation code to widget types, etc.? Sounds like the ViewModel pattern.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;(We will take a closer look at ViewModel and its relations in a separate article, only an introduction is given here.)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is an example how view layout would look like, without widget IDs, but with a ViewModel attached (please make sure you are familiar with the &lt;a href=&quot;https://developer.android.com/topic/libraries/data-binding/&quot;&gt;Android Data Binding library&lt;/a&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;layout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:bind=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;data&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;variable&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewModel&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.example.VenueViewModel&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;LinearLayout&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;bind:onClick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@{viewModel.onClicked}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;bind:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@{viewModel.image}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@{viewModel.name}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@{viewModel.location}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/LinearLayout&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/layout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Suppose, we decided to update this layout to:&lt;/p&gt;
+
+&lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;layout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:bind=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res-auto&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;data&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;variable&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewModel&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.example.VenueViewModel&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'@{viewModel.name + &quot;, &quot; + viewModel.location}'&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;bind:drawableStart=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@{viewModel.image}&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;bind:onClick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@{viewModel.onClicked}&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/layout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The change was done with ease, without touching presentation code at all and even without recompilation. And the latter might not look like a big deal, but in a project with many dozens of screens it does save &lt;em&gt;a lot&lt;/em&gt; of time.&lt;/p&gt;
+
+&lt;p&gt;Then, contents of the corresponding ViewModel:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Kotlin&quot;&gt;class VenueViewModel {
+    val image = ObservableField&amp;lt;String&amp;gt;()
+    val name = ObservableField&amp;lt;String&amp;gt;()
+    val location = ObservableField&amp;lt;String&amp;gt;()
+
+    val onClicked = PublishSubject.create&amp;lt;View&amp;gt;()
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now your presentation code is completely decoupled from view layout:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Kotlin&quot;&gt;//to propagate changes to view
+viewModel.location.set(lastSeen)
+...
+//to react to user input
+viewModel.onClicked.subscribe { navigateElsewhere() }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Both ViewModel and presentation code is simplified, many details are omitted – this will be covered in upcoming articles.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;benefits-of-the-solution&quot;&gt;Benefits of the solution&lt;/h2&gt;
+
+&lt;h4 id=&quot;view-related-code-is-not-scattered&quot;&gt;View-related code is not scattered&lt;/h4&gt;
+
+&lt;p&gt;How many times did you find yourself doing part of view styling and layout in XML and other part – in Kotlin (Java) code? As screen becomes more complex, it might take significant time to find where a particular style is applied: you need to go through XML and several source code files.&lt;/p&gt;
+
+&lt;p&gt;The ViewModel pattern forces you to shift view-related code to view, since presentation code no longer has a direct reference to view layout.&lt;/p&gt;
+
+&lt;p&gt;As a positive side effect of this we have clear separation between two types of code: view layout is &lt;em&gt;declarative&lt;/em&gt;, presentation code is &lt;em&gt;imperative&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;developers-can-work-in-parallel-without-interfering-each-other&quot;&gt;Developers can work in parallel without interfering each other&lt;/h4&gt;
+
+&lt;p&gt;One developer can be updating look and feel of a screen, whereas another one can be fixing a bug in presentation code for that same screen, at the same time.&lt;/p&gt;
+
+&lt;p&gt;When both of them submit their pull requests, there will be no conflicts between them. Also, these developers won’t spend time waiting on each other or asking each other which lines are safe to change.&lt;/p&gt;
+
+&lt;p&gt;And all experienced teams know how much time can be saved avoiding that extra coordination.&lt;/p&gt;
+
+&lt;h4 id=&quot;testing-becomes-much-easier&quot;&gt;Testing becomes much easier&lt;/h4&gt;
+
+&lt;p&gt;Testing on Android is still hard, also because launching instrumentation tests against UI is very slow. This seems to be a primary reason why many teams give up TDD or even doing testing at all.&lt;/p&gt;
+
+&lt;p&gt;With the current solution, you can be testing against ViewModel instead. That would allow to run tests much faster (since no emulator is involved), thus enabling TDD.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Also, I’m not saying there should be no tests against UI. I will write about balance between tests against UI and against ViewModel in a separate article.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;conforms-to-reactive-programming&quot;&gt;Conforms to Reactive Programming&lt;/h4&gt;
+
+&lt;p&gt;To quote the definition:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In computing, reactive programming is a declarative programming paradigm concerned with data streams and the propagation of change.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the ViewModel code shown above each field is a data stream consumed either by view layout (listening, for example, for location change) or by presentation code (listening for button clicks).&lt;/p&gt;
+
+&lt;p&gt;Thus, encapsulation of view layout is intact as view layout takes its own responsibility to wire up to streams of data and update itself accordingly.&lt;/p&gt;
+
+&lt;h4 id=&quot;conforms-to-clean-architecture&quot;&gt;Conforms to Clean Architecture&lt;/h4&gt;
+
+&lt;p&gt;For example, &lt;a href=&quot;https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html&quot;&gt;Clean Architecture&lt;/a&gt; says presentation code (sitting at the “Interface Adapters” circle) and view layout code (at “External Interfaces”) belong to different layers. And according to the Dependency rule, dependencies can only point inwards, meaning that presentation code &lt;em&gt;must not&lt;/em&gt; depend on view layout, because “Interface Adapters” can’t depend on “External Interfaces”.&lt;/p&gt;
+
+&lt;p&gt;This statement does not hold when using &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt;, and the ViewModel pattern fixes that.&lt;/p&gt;
+
+&lt;p&gt;Also, the current solution conforms to other important rules: “Independent of Frameworks”, “Testable”, “Independent of UI”.&lt;/p&gt;
+
+&lt;h4 id=&quot;step-towards-reusing-code-across-different-platforms&quot;&gt;Step towards reusing code across different platforms&lt;/h4&gt;
+
+&lt;p&gt;To quote Clean Architecture:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Independent of UI. The UI can change easily, without changing the rest of the system. A Web UI could be replaced with a console UI, for example, without changing the business rules.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We want to be independent of UI not because we want to make a random extra effort.&lt;/p&gt;
+
+&lt;p&gt;Instead, we want to leverage reusability because UI-independent and platform-independent code can be shared (Kotlin/Native has already been heading in that direction). I’ll be writing about this topic in upcoming articles.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;We highlighted problems brought by usage of &lt;code class=&quot;highlighter-rouge&quot;&gt;findViewById()&lt;/code&gt; and found a solution to mitigate those. We also saw how scalable the solution is and how it conforms to Clean Architecture and Separation Of Concerns.&lt;/p&gt;</content><author><name></name></author><summary type="html">TL;DR Manipulating widgets directly is a bad habit as it breaches encapsulation and creates a tight coupling between presentation code and view layout declaration. Consider using the ViewModel pattern instead, backed by the Android Data Binding library.</summary></entry></feed>
